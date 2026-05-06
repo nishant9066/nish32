@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 20px;
+    padding: 18px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,13 +30,12 @@ header {
     z-index: 1000;
 }
 
-/* PERFECT CENTER LOGO */
+/* BIGGER COMPANY NAME */
 .logo {
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
     color: #00e5ff;
     letter-spacing: 2px;
-    text-align: center;
 }
 
 /* HERO */
@@ -48,7 +47,7 @@ header {
     align-items: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
     text-align: center;
-    padding: 80px 20px 20px; /* space from header */
+    padding: 90px 20px 20px;
 }
 
 .hero h1 {
@@ -114,10 +113,32 @@ header {
 }
 
 /* MISSION */
+.mission {
+    padding: 50px 15px;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.mission h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #00e5ff;
+    margin: 10px auto;
+}
+
 .mission p {
-    max-width: 620px;
+    max-width: 650px;
     margin: 10px auto 0;
     color: #aaa;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* SERVICES */
@@ -171,7 +192,7 @@ input, textarea {
     cursor: pointer;
 }
 
-/* PREMIUM LOCATION CARD */
+/* LOCATION PREMIUM */
 .location {
     padding: 30px 15px;
     display: flex;
@@ -217,11 +238,15 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
     .logo {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .hero h1 {
         font-size: 30px;
+    }
+
+    .mission h2 {
+        font-size: 26px;
     }
 }
 </style>
@@ -281,7 +306,6 @@ footer {
     <p>📞 +91 9767337880</p>
 </section>
 
-<!-- PREMIUM LOCATION -->
 <section class="location">
     <div class="location-box">
         <p>📍 Navi Mumbai, Maharashtra</p>
