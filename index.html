@@ -20,9 +20,8 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 14px 20px;
+    padding: 14px 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: rgba(8,12,24,0.9);
     backdrop-filter: blur(12px);
@@ -30,24 +29,27 @@ header {
     z-index: 1000;
 }
 
-/* LOGO */
+/* LOGO BIG */
 .logo {
-    font-size: 18px;
+    font-size: 20px; /* bigger */
     font-weight: 700;
     color: #00e5ff;
     white-space: nowrap;
 }
 
-/* NAV */
+/* NAV FIX */
 nav {
     display: flex;
-    gap: 18px;
+    gap: 14px;
+    margin-left: auto; /* pushes nav to right */
+    flex-shrink: 0;
 }
 
 nav a {
     text-decoration: none;
     color: #cbd5e1;
     font-size: 13px;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -191,10 +193,10 @@ footer {
     color: #777;
 }
 
-/* MOBILE FIX */
+/* MOBILE PERFECT BALANCE */
 @media (max-width: 768px) {
     .logo {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     nav {
