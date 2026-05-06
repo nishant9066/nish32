@@ -16,9 +16,9 @@ body {
     transition: 0.3s;
 }
 
-/* LIGHT MODE */
+/* SOFT GREY LIGHT MODE */
 body.light {
-    background: #f5f7fb;
+    background: #e6ebf2; /* soft grey */
     color: #111;
 }
 
@@ -37,23 +37,28 @@ header {
     z-index: 1000;
 }
 
+body.light header {
+    background: rgba(255,255,255,0.6);
+}
+
 /* LOGO */
 .logo {
     font-size: 20px;
     font-weight: 700;
     color: #00e5ff;
-    white-space: nowrap;
 }
 
-/* TOGGLE BUTTON */
+/* ICON TOGGLE */
 .toggle-btn {
-    background: linear-gradient(45deg, #00e5ff, #0077ff);
+    font-size: 18px;
+    background: transparent;
     border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
     cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
+    color: #fff;
+}
+
+body.light .toggle-btn {
+    color: #111;
 }
 
 /* HERO */
@@ -70,7 +75,7 @@ header {
 }
 
 body.light .hero {
-    background: #eef2f7;
+    background: #dde3ea;
 }
 
 .hero h1 {
@@ -88,7 +93,7 @@ body.light .hero {
 }
 
 body.light .hero p {
-    color: #555;
+    color: #444;
 }
 
 /* GOALS */
@@ -102,8 +107,8 @@ body.light .hero p {
 }
 
 body.light .goals {
-    background: white;
-    border: 1px solid #ddd;
+    background: #f4f7fb;
+    border: 1px solid #d1d9e6;
 }
 
 .goals h2 {
@@ -115,7 +120,7 @@ body.light .goals {
 }
 
 body.light .goals p {
-    color: #444;
+    color: #333;
 }
 
 /* BUTTONS */
@@ -154,7 +159,7 @@ body.light .goals p {
 }
 
 body.light .quick-contact {
-    color: #555;
+    color: #444;
 }
 
 /* SECTIONS */
@@ -179,8 +184,8 @@ body.light .quick-contact {
 }
 
 body.light .card {
-    background: white;
-    border: 1px solid #ddd;
+    background: #f4f7fb;
+    border: 1px solid #d1d9e6;
 }
 
 /* CONTACT */
@@ -189,7 +194,7 @@ body.light .card {
 }
 
 body.light #contact {
-    background: #f0f3f8;
+    background: #dde3ea;
 }
 
 form {
@@ -209,8 +214,8 @@ input, textarea {
 
 body.light input,
 body.light textarea {
-    background: white;
-    color: black;
+    background: #fff;
+    color: #000;
     border: 1px solid #ccc;
 }
 
@@ -231,7 +236,7 @@ footer {
 }
 
 body.light footer {
-    background: #e5e7eb;
+    background: #d6dbe3;
     color: #444;
 }
 </style>
@@ -241,7 +246,7 @@ body.light footer {
 
 <header>
     <div class="logo">VAJRAITECH LLP</div>
-    <button class="toggle-btn" onclick="toggleMode()">Toggle UI</button>
+    <button class="toggle-btn" onclick="toggleMode()" id="toggleIcon">🌙</button>
 </header>
 
 <section class="hero">
@@ -293,6 +298,8 @@ body.light footer {
 <script>
 function toggleMode() {
     document.body.classList.toggle("light");
+    const icon = document.getElementById("toggleIcon");
+    icon.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
 }
 </script>
 
