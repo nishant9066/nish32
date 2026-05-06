@@ -5,86 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VAJRAITECH LLP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* 🔥 GLOBAL FIX (removes right strip) */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-
 body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background: #03050a;
     color: #fff;
-    transition: 0.3s;
-}
-
-/* LIGHT MODE (same color everywhere) */
-body.light {
-    background: #dde3ea;
-    color: #111;
 }
 
 /* HEADER */
 header {
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
-    padding: 12px 15px;
+    padding: 14px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(8,12,24,0.9);
+    background: rgba(8,12,24,0.85);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: 1000;
 }
 
-body.light header {
-    background: rgba(255,255,255,0.6);
-}
-
-/* LOGO */
 .logo {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: #00e5ff;
 }
 
-/* TOGGLE */
-.toggle-btn {
-    font-size: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #fff;
+nav {
+    display: flex;
+    gap: 25px;
 }
 
-body.light .toggle-btn {
-    color: #111;
+nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00e5ff;
 }
 
 /* HERO */
 .hero {
-    width: 100%;
     min-height: 100vh;
-    padding: 40px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
-}
-
-body.light .hero {
-    background: #dde3ea;
+    text-align: center;
+    padding: 0 20px 20px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    font-weight: 700;
+    font-size: 38px;
+    max-width: 700px;
+    animation: fadeUp 1s ease;
 }
 
 .highlight {
@@ -92,45 +74,13 @@ body.light .hero {
 }
 
 .hero p {
-    font-size: 16px;
+    margin-top: 8px;
     color: #aaa;
-}
-
-body.light .hero p {
-    color: #444;
-}
-
-/* GOALS */
-.goals {
-    margin-top: 30px;
-    max-width: 650px;
-    width: 100%;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(0,229,255,0.1);
-    padding: 20px;
-    border-radius: 12px;
-}
-
-body.light .goals {
-    background: #f4f7fb;
-    border: 1px solid #d1d9e6;
-}
-
-.goals h2 {
-    color: #00e5ff;
-}
-
-.goals p {
-    color: #bbb;
-}
-
-body.light .goals p {
-    color: #333;
 }
 
 /* BUTTONS */
 .cta {
-    margin-top: 25px;
+    margin-top: 18px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -138,9 +88,14 @@ body.light .goals p {
 }
 
 .btn {
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 10px 22px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: 0.15s;
+}
+
+.btn:active {
+    transform: scale(0.95);
 }
 
 .btn-primary {
@@ -156,24 +111,34 @@ body.light .goals p {
     background: transparent;
 }
 
-/* CONTACT TEXT */
-.quick-contact {
-    margin-top: 20px;
-    font-size: 13px;
-    color: #bbb;
-}
-
-body.light .quick-contact {
-    color: #444;
-}
-
-/* SECTIONS */
+/* SECTION */
 .section {
-    width: 100%;
     padding: 50px 15px;
     text-align: center;
 }
 
+/* DIVIDER ANIMATION */
+.divider {
+    height: 1px;
+    width: 0;
+    margin: 30px auto;
+    background: linear-gradient(to right, transparent, #00e5ff, transparent);
+    transition: width 1s ease;
+}
+
+/* MISSION */
+.mission {
+    padding: 35px 15px;
+    text-align: center;
+}
+
+.mission p {
+    max-width: 620px;
+    margin: 10px auto 0;
+    color: #aaa;
+}
+
+/* SERVICES */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -187,22 +152,20 @@ body.light .quick-contact {
     padding: 18px;
     width: 240px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-body.light .card {
-    background: #f4f7fb;
-    border: 1px solid #d1d9e6;
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #00e5ff;
 }
 
-/* CONTACT */
+/* CONTACT (DIFFERENT BG) */
 #contact {
     background: #050914;
 }
 
-body.light #contact {
-    background: #dde3ea;
-}
-
+/* FORM */
 form {
     max-width: 340px;
     margin: auto;
@@ -218,34 +181,62 @@ input, textarea {
     border-radius: 4px;
 }
 
-body.light input,
-body.light textarea {
-    background: #fff;
-    color: #000;
-    border: 1px solid #ccc;
-}
-
 .submit-btn {
     width: 100%;
     padding: 10px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
+    cursor: pointer;
 }
 
-/* FOOTER */
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+/* LOCATION */
+.location {
+    padding: 14px 10px;
+    text-align: center;
+    border-top: 1px solid rgba(0,229,255,0.08);
+}
+
+.location p {
+    margin: 2px 0;
+    color: #bbb;
+}
+
+/* FOOTER (DIFFERENT BG) */
 footer {
     background: #02040a;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     color: #777;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-body.light footer {
-    background: #d6dbe3;
-    color: #444;
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #25D366;
+    padding: 10px;
+    border-radius: 50%;
 }
 
+/* ANIMATION */
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 30px; }
+    nav { gap: 12px; }
+    nav a { font-size: 12px; }
+}
 </style>
 </head>
 
@@ -253,39 +244,46 @@ body.light footer {
 
 <header>
     <div class="logo">VAJRAITECH LLP</div>
-    <button class="toggle-btn" onclick="toggleMode()" id="toggleIcon">🌙</button>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
-    <h1>VAJRAITECH <span class="highlight">LLP</span></h1>
-    <p>Cybersecurity • Network Security • IT Support</p>
-
-    <div class="goals">
-        <h2>Our Goals</h2>
-        <p>
-            To build a secure digital future by protecting businesses from cyber threats,
-            strengthening network infrastructure, and providing reliable IT support.
-        </p>
-    </div>
+    <h1>Building a <span class="highlight">Secure Digital Future</span></h1>
+    <p>Cybersecurity, Network Security & Reliable IT Support</p>
 
     <div class="cta">
         <button class="btn btn-primary">Get Protected</button>
         <button class="btn btn-secondary">Talk to Expert</button>
     </div>
-
-    <div class="quick-contact">
-        📞 +91 9767337880 | 📍 Navi Mumbai | 🌐 Remote Available
-    </div>
 </section>
+
+<div class="divider"></div>
+
+<section class="mission">
+    <h2>Our Mission</h2>
+    <p>
+        To empower businesses with strong cybersecurity, reliable network infrastructure,
+        and seamless IT support—ensuring growth, protection, and a future-ready digital environment.
+    </p>
+</section>
+
+<div class="divider"></div>
 
 <section id="services" class="section">
     <h2>Our Services</h2>
+
     <div class="services">
         <div class="card"><h3>Cybersecurity</h3><p>Advanced protection</p></div>
         <div class="card"><h3>Network Security</h3><p>Firewall & VPN</p></div>
         <div class="card"><h3>IT Support</h3><p>Remote troubleshooting</p></div>
     </div>
 </section>
+
+<div class="divider"></div>
 
 <section id="contact" class="section">
     <h2>Contact</h2>
@@ -294,20 +292,35 @@ body.light footer {
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <textarea name="message" placeholder="Requirement"></textarea>
+
         <button class="submit-btn">Request Consultation</button>
     </form>
+
+    <p>📞 +91 9767337880</p>
 </section>
+
+<section class="location">
+    <p>📍 Navi Mumbai, Maharashtra</p>
+    <p>🌐 Remote Services Available</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919767337880">💬</a>
 
 <footer>
     © 2026 VAJRAITECH LLP. All Rights Reserved.
 </footer>
 
 <script>
-function toggleMode() {
-    document.body.classList.toggle("light");
-    const icon = document.getElementById("toggleIcon");
-    icon.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
-}
+const dividers = document.querySelectorAll('.divider');
+
+window.addEventListener('scroll', () => {
+    dividers.forEach(div => {
+        const rect = div.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            div.style.width = "80%";
+        }
+    });
+});
 </script>
 
 </body>
