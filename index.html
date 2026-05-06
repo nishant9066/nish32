@@ -46,7 +46,6 @@ nav a {
     text-decoration: none;
     color: #cbd5e1;
     font-size: 14px;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -62,11 +61,11 @@ nav a:hover {
     align-items: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
     text-align: center;
-    padding: 0 20px;
+    padding: 0 20px 20px;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 38px;
     max-width: 700px;
     animation: fadeUp 1s ease;
 }
@@ -76,17 +75,17 @@ nav a:hover {
 }
 
 .hero p {
-    margin-top: 10px;
+    margin-top: 8px;
     color: #aaa;
     max-width: 500px;
-    animation: fadeUp 1.3s ease;
+    animation: fadeUp 1.2s ease;
 }
 
 /* BUTTONS */
 .cta {
-    margin-top: 20px;
+    margin-top: 18px;
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -117,11 +116,15 @@ nav a:hover {
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 50px 15px;
     text-align: center;
 }
 
 /* MISSION */
+.mission {
+    padding: 35px 15px;
+}
+
 .mission p {
     max-width: 600px;
     margin: auto;
@@ -138,27 +141,27 @@ nav a:hover {
 .card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(0,229,255,0.08);
-    margin: 10px;
-    padding: 20px;
-    width: 250px;
+    margin: 8px;
+    padding: 18px;
+    width: 240px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: #00e5ff;
 }
 
 /* FORM */
 form {
-    max-width: 350px;
+    max-width: 340px;
     margin: auto;
 }
 
 input, textarea {
     width: 100%;
-    margin: 8px 0;
+    margin: 6px 0;
     padding: 10px;
     background: #0b1224;
     border: 1px solid #1e293b;
@@ -179,23 +182,28 @@ input, textarea {
     transform: scale(0.95);
 }
 
+/* CONTACT TEXT */
+#contact p {
+    margin-top: 6px;
+}
+
 /* LOCATION */
 .location {
-    padding: 25px 10px;
+    padding: 14px 10px;
     text-align: center;
     border-top: 1px solid rgba(0,229,255,0.08);
 }
 
 .location p {
-    margin: 3px 0;
+    margin: 2px 0;
     color: #bbb;
 }
 
 /* FOOTER */
 footer {
-    padding: 12px;
+    padding: 6px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     color: #777;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
@@ -213,29 +221,17 @@ footer {
 
 /* ANIMATION */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
+    .hero h1 { font-size: 30px; }
+    nav { gap: 12px; }
+    nav a { font-size: 12px; }
+    .section { padding: 35px 12px; }
+    .mission { padding: 25px 12px; }
 }
 </style>
 </head>
@@ -261,7 +257,7 @@ footer {
     </div>
 </section>
 
-<section class="section mission">
+<section class="mission">
     <h2>Our Mission</h2>
     <p>
         To empower businesses with strong cybersecurity, reliable network infrastructure,
@@ -273,8 +269,8 @@ footer {
     <h2>Our Services</h2>
 
     <div class="services">
-        <div class="card"><h3>Cybersecurity</h3><p>Advanced protection from threats</p></div>
-        <div class="card"><h3>Network Security</h3><p>Firewall & VPN solutions</p></div>
+        <div class="card"><h3>Cybersecurity</h3><p>Advanced protection</p></div>
+        <div class="card"><h3>Network Security</h3><p>Firewall & VPN</p></div>
         <div class="card"><h3>IT Support</h3><p>Remote troubleshooting</p></div>
     </div>
 </section>
