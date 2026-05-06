@@ -16,13 +16,18 @@ body {
     transition: 0.3s;
 }
 
+/* FORCE REMOVE NAV (FINAL FIX) */
+nav {
+    display: none !important;
+}
+
 /* LIGHT MODE */
 body.light {
     background: #e6ebf2;
     color: #111;
 }
 
-/* HEADER (NO NAV, NO OVERLAP) */
+/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -49,7 +54,7 @@ body.light header {
     white-space: nowrap;
 }
 
-/* TOGGLE BUTTON */
+/* TOGGLE */
 .toggle-btn {
     font-size: 18px;
     background: transparent;
@@ -71,8 +76,7 @@ body.light .toggle-btn {
     align-items: center;
     text-align: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
 }
 
 body.light .hero {
