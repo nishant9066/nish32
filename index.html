@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VAJRAITECH LLP</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #03050a;
     color: #fff;
 }
@@ -18,28 +21,35 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 10px 40px;
+    padding: 10px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
-    background: rgba(10, 15, 30, 0.6);
+    background: rgba(10, 15, 30, 0.7);
     border-bottom: 1px solid rgba(0,229,255,0.08);
     z-index: 1000;
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
     color: #00e5ff;
 }
 
+/* NAV FIXED */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 nav a {
-    margin-left: 20px;
+    margin-left: 15px;
     color: #bbb;
     text-decoration: none;
     font-size: 13px;
-    transition: 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -48,7 +58,7 @@ nav a:hover {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,9 +69,8 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 42px;
-    max-width: 750px;
-    animation: fadeUp 1s ease;
+    font-size: 36px;
+    max-width: 90%;
 }
 
 .highlight {
@@ -70,49 +79,51 @@ nav a:hover {
 
 .hero p {
     color: #aaa;
-    max-width: 550px;
+    max-width: 500px;
     margin-top: 10px;
-    animation: fadeUp 1.3s ease;
 }
 
 /* BUTTONS */
 .cta {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
-    gap: 15px;
-    animation: fadeUp 1.6s ease;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+/* PRESS ANIMATION */
+.btn-primary:active, .btn-secondary:active {
+    transform: scale(0.95);
 }
 
 .btn-primary {
-    padding: 10px 24px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
     color: black;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
+    font-weight: 600;
 }
 
 .btn-secondary {
-    padding: 10px 24px;
     border: 1px solid #00e5ff;
     color: #00e5ff;
     background: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 0 15px #00e5ff;
 }
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 50px 15px;
     text-align: center;
 }
 
-/* SERVICES */
+/* SERVICES FIX */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -123,20 +134,21 @@ nav a:hover {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(0,229,255,0.08);
     margin: 10px;
-    padding: 20px;
-    width: 240px;
+    padding: 18px;
+    width: 90%;
+    max-width: 260px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: #00e5ff;
 }
 
 /* FORM */
 form {
-    max-width: 380px;
+    max-width: 350px;
     margin: auto;
 }
 
@@ -155,50 +167,53 @@ input, textarea {
     padding: 10px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
 }
 
 /* LOCATION */
 .location {
-    padding: 30px 20px;
+    padding: 25px 10px;
     text-align: center;
     border-top: 1px solid rgba(0,229,255,0.08);
 }
 
 .location p {
-    margin: 4px 0;
+    margin: 3px 0;
     color: #bbb;
 }
 
-/* FOOTER (CLEAN & SMALL) */
+/* FOOTER FIXED */
 footer {
-    padding: 12px;
+    padding: 10px;
     text-align: center;
-    font-size: 12px;
-    color: #777;
+    font-size: 11px;
+    color: #666;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* WHATSAPP */
 .whatsapp {
     position: fixed;
-    bottom: 18px;
-    right: 18px;
+    bottom: 15px;
+    right: 15px;
     background: #25D366;
-    padding: 12px;
+    padding: 10px;
     border-radius: 50%;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 44px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    nav a {
+        font-size: 14px;
     }
 }
 </style>
@@ -217,7 +232,7 @@ footer {
 
 <section class="hero">
     <h1>Building a <span class="highlight">Secure Digital Future</span></h1>
-    <p>Cybersecurity, Network Security & Reliable IT Support for modern businesses.</p>
+    <p>Cybersecurity, Network Security & Reliable IT Support</p>
 
     <div class="cta">
         <button class="btn-primary">Get Protected</button>
@@ -231,17 +246,17 @@ footer {
     <div class="services">
         <div class="card">
             <h3>Cybersecurity</h3>
-            <p>Advanced threat protection</p>
+            <p>Advanced protection</p>
         </div>
 
         <div class="card">
             <h3>Network Security</h3>
-            <p>Firewall & VPN setup</p>
+            <p>Firewall & VPN</p>
         </div>
 
         <div class="card">
             <h3>IT Support</h3>
-            <p>Fast remote troubleshooting</p>
+            <p>Remote troubleshooting</p>
         </div>
     </div>
 </section>
@@ -268,7 +283,7 @@ footer {
 <a class="whatsapp" href="https://wa.me/919767337880">💬</a>
 
 <footer>
-    © 2026 VAJRAITECH LLP
+    © 2026 VAJRAITECH LLP. All Rights Reserved.
 </footer>
 
 </body>
