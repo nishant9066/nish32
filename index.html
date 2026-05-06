@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 16px 40px;
+    padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,32 +30,34 @@ header {
     z-index: 1000;
 }
 
+/* LOGO */
 .logo {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     color: #00e5ff;
-    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
+/* NAV */
 nav {
     display: flex;
-    gap: 30px;
+    gap: 18px;
 }
 
 nav a {
     text-decoration: none;
     color: #cbd5e1;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 nav a:hover {
     color: #00e5ff;
 }
 
-/* HERO NEW */
+/* HERO */
 .hero {
     min-height: 100vh;
-    padding-top: 120px;
+    padding-top: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,9 +68,8 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 42px;
     font-weight: 700;
-    margin-bottom: 10px;
 }
 
 .highlight {
@@ -76,41 +77,39 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 16px;
     color: #aaa;
 }
 
-/* GOALS BOX */
+/* GOALS */
 .goals {
-    margin-top: 40px;
-    max-width: 700px;
+    margin-top: 30px;
+    max-width: 650px;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(0,229,255,0.1);
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
 }
 
 .goals h2 {
-    margin-bottom: 10px;
     color: #00e5ff;
 }
 
 .goals p {
     color: #bbb;
-    font-size: 15px;
 }
 
-/* CTA */
+/* BUTTONS */
 .cta {
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .btn {
-    padding: 12px 26px;
+    padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -128,18 +127,14 @@ nav a:hover {
     background: transparent;
 }
 
-/* QUICK CONTACT */
+/* CONTACT TEXT */
 .quick-contact {
-    margin-top: 25px;
-    font-size: 14px;
+    margin-top: 20px;
+    font-size: 13px;
     color: #bbb;
 }
 
-.quick-contact span {
-    color: #00e5ff;
-}
-
-/* EXISTING SECTIONS SAME */
+/* SECTIONS */
 .section {
     padding: 50px 15px;
     text-align: center;
@@ -160,6 +155,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
+/* CONTACT */
 #contact {
     background: #050914;
 }
@@ -186,6 +182,7 @@ input, textarea {
     border: none;
 }
 
+/* FOOTER */
 footer {
     background: #02040a;
     padding: 10px;
@@ -194,10 +191,23 @@ footer {
     color: #777;
 }
 
-/* MOBILE */
+/* MOBILE FIX */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 34px; }
-    nav { gap: 15px; }
+    .logo {
+        font-size: 16px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
 }
 </style>
 </head>
@@ -231,9 +241,7 @@ footer {
     </div>
 
     <div class="quick-contact">
-        📞 <span>+91 9767337880</span> &nbsp; | &nbsp;
-        📍 Navi Mumbai &nbsp; | &nbsp;
-        🌐 Remote Available
+        📞 +91 9767337880 | 📍 Navi Mumbai | 🌐 Remote Available
     </div>
 </section>
 
