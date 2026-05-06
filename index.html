@@ -22,26 +22,23 @@ body.light {
     color: #111;
 }
 
-/* HEADER FIXED (NO OVERLAP EVER) */
+/* HEADER (NO NAV, NO OVERLAP) */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 12px 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     background: rgba(8,12,24,0.9);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
     z-index: 1000;
 }
 
-/* WRAPPER FOR SAFE SPACING */
-.header-left {
-    display: flex;
-    align-items: center;
-    min-width: 0; /* IMPORTANT */
+body.light header {
+    background: rgba(255,255,255,0.6);
 }
 
 /* LOGO */
@@ -50,19 +47,15 @@ header {
     font-weight: 700;
     color: #00e5ff;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* prevents push */
 }
 
-/* BUTTON SAFE */
+/* TOGGLE BUTTON */
 .toggle-btn {
-    flex-shrink: 0; /* NEVER shrink */
     font-size: 18px;
     background: transparent;
     border: none;
     cursor: pointer;
     color: #fff;
-    margin-left: 10px;
 }
 
 body.light .toggle-btn {
@@ -253,9 +246,7 @@ body.light footer {
 <body>
 
 <header>
-    <div class="header-left">
-        <div class="logo">VAJRAITECH LLP</div>
-    </div>
+    <div class="logo">VAJRAITECH LLP</div>
     <button class="toggle-btn" onclick="toggleMode()" id="toggleIcon">🌙</button>
 </header>
 
