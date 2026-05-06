@@ -23,13 +23,14 @@ body {
     transition: 0.3s;
 }
 
-/* HEADER FIXED */
+/* HEADER PERFECTED */
 header {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 10px 20px;
+    padding: 10px 30px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
     background: rgba(10, 15, 30, 0.7);
@@ -37,19 +38,19 @@ header {
     z-index: 1000;
 }
 
-/* LEFT LOGO */
+/* LOGO */
 .logo {
     font-size: 18px;
     font-weight: 600;
     color: #00e5ff;
 }
 
-/* NAV CENTERED PROPERLY */
+/* NAV FIX */
 nav {
-    margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
+    margin-right: 10px; /* brings everything slightly inward */
 }
 
 nav a {
@@ -59,10 +60,15 @@ nav a {
     white-space: nowrap;
 }
 
+nav a:hover {
+    color: #00e5ff;
+}
+
 /* THEME BUTTON */
 .theme-btn {
     cursor: pointer;
     font-size: 16px;
+    padding: 4px 6px;
 }
 
 /* HERO */
@@ -115,12 +121,13 @@ nav a {
     background: transparent;
 }
 
-/* SERVICES */
+/* SECTION */
 .section {
     padding: 50px 15px;
     text-align: center;
 }
 
+/* SERVICES */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -135,6 +142,18 @@ nav a {
     width: 90%;
     max-width: 260px;
     border-radius: 10px;
+}
+
+/* MISSION SECTION */
+.mission {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.mission p {
+    max-width: 600px;
+    margin: auto;
+    color: #aaa;
 }
 
 /* FORM */
@@ -207,6 +226,15 @@ footer {
         <button class="btn-primary">Get Protected</button>
         <button class="btn-secondary">Talk to Expert</button>
     </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+    <h2>Our Mission</h2>
+    <p>
+        To empower businesses with strong cybersecurity, reliable network infrastructure,
+        and seamless IT support—ensuring growth, protection, and a future-ready digital environment.
+    </p>
 </section>
 
 <section id="services" class="section">
