@@ -20,22 +20,23 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 14px 25px;
+    padding: 18px 20px;
     display: flex;
-    justify-content: center; /* center logo */
+    justify-content: center;
     align-items: center;
-    background: rgba(8,12,24,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(8,12,24,0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
 }
 
-/* BIG COMPANY NAME CENTERED */
+/* PERFECT CENTER LOGO */
 .logo {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     color: #00e5ff;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 /* HERO */
@@ -47,13 +48,12 @@ header {
     align-items: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
     text-align: center;
-    padding: 0 20px 20px;
+    padding: 80px 20px 20px; /* space from header */
 }
 
 .hero h1 {
     font-size: 38px;
     max-width: 700px;
-    animation: fadeUp 1s ease;
 }
 
 .highlight {
@@ -61,24 +61,24 @@ header {
 }
 
 .hero p {
-    margin-top: 8px;
+    margin-top: 10px;
     color: #aaa;
 }
 
 /* BUTTONS */
 .cta {
-    margin-top: 18px;
+    margin-top: 22px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .btn {
-    padding: 10px 22px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.15s;
+    transition: 0.2s;
 }
 
 .btn:active {
@@ -98,27 +98,22 @@ header {
     background: transparent;
 }
 
+/* DIVIDER */
+.divider {
+    height: 1px;
+    width: 0;
+    margin: 40px auto;
+    background: linear-gradient(to right, transparent, #00e5ff, transparent);
+    transition: width 1s ease;
+}
+
 /* SECTION */
 .section {
     padding: 50px 15px;
     text-align: center;
 }
 
-/* DIVIDER */
-.divider {
-    height: 1px;
-    width: 0;
-    margin: 30px auto;
-    background: linear-gradient(to right, transparent, #00e5ff, transparent);
-    transition: width 1s ease;
-}
-
 /* MISSION */
-.mission {
-    padding: 35px 15px;
-    text-align: center;
-}
-
 .mission p {
     max-width: 620px;
     margin: 10px auto 0;
@@ -133,17 +128,17 @@ header {
 }
 
 .card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(0,229,255,0.08);
-    margin: 8px;
-    padding: 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,229,255,0.1);
+    margin: 10px;
+    padding: 20px;
     width: 240px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: #00e5ff;
 }
 
@@ -176,30 +171,37 @@ input, textarea {
     cursor: pointer;
 }
 
-.submit-btn:active {
-    transform: scale(0.95);
-}
-
-/* LOCATION */
+/* PREMIUM LOCATION CARD */
 .location {
-    padding: 14px 10px;
-    text-align: center;
-    border-top: 1px solid rgba(0,229,255,0.08);
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
 }
 
-.location p {
-    margin: 2px 0;
-    color: #bbb;
+.location-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,229,255,0.1);
+    border-radius: 12px;
+    padding: 18px 25px;
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.location-box p {
+    margin: 8px 0;
+    color: #ccc;
+    font-size: 14px;
 }
 
 /* FOOTER */
 footer {
     background: #02040a;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     font-size: 11px;
     color: #777;
-    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* WHATSAPP */
@@ -208,14 +210,8 @@ footer {
     bottom: 15px;
     right: 15px;
     background: #25D366;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
 }
 
 /* MOBILE */
@@ -285,9 +281,12 @@ footer {
     <p>📞 +91 9767337880</p>
 </section>
 
+<!-- PREMIUM LOCATION -->
 <section class="location">
-    <p>📍 Navi Mumbai, Maharashtra</p>
-    <p>🌐 Remote Services Available</p>
+    <div class="location-box">
+        <p>📍 Navi Mumbai, Maharashtra</p>
+        <p>🌐 Remote Services Available</p>
+    </div>
 </section>
 
 <a class="whatsapp" href="https://wa.me/919767337880">💬</a>
