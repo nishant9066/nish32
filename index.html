@@ -9,59 +9,76 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0f1a;
+    background: #05070d;
     color: #fff;
 }
 
+/* HEADER */
 header {
-    background: #0f172a;
-    padding: 20px 50px;
+    background: rgba(10,15,30,0.9);
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 
 header h1 {
     color: #00e5ff;
+    font-size: 20px;
 }
 
 nav a {
     color: white;
-    margin-left: 20px;
+    margin-left: 15px;
     text-decoration: none;
 }
 
+/* HERO */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to right, #020617, #0f172a);
+    padding: 90px 20px;
+    background: radial-gradient(circle, #020617, #000);
 }
 
-.hero h2 {
-    font-size: 40px;
+/* GLOW TEXT */
+.glow {
     color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff, 0 0 30px #00e5ff;
 }
 
-.hero p {
-    max-width: 600px;
-    margin: auto;
-    margin-top: 15px;
+/* BUTTONS */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #00e5ff;
-    color: black;
-    border: none;
+    padding: 10px 22px;
+    background: transparent;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
     cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
+.btn:hover {
+    background: #00e5ff;
+    color: black;
+    box-shadow: 0 0 15px #00e5ff;
+}
+
+/* SECTIONS */
 .section {
     padding: 60px 20px;
     text-align: center;
 }
 
+/* SERVICES */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -69,24 +86,59 @@ nav a {
 }
 
 .card {
-    background: #111827;
+    background: #0b1224;
     margin: 15px;
     padding: 20px;
-    width: 250px;
+    width: 240px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-.card h3 {
-    color: #00e5ff;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00e5ff44;
 }
 
-.contact {
-    background: #020617;
+/* FORM */
+form {
+    max-width: 400px;
+    margin: auto;
 }
 
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #0b1224;
+    border: 1px solid #00e5ff;
+    color: white;
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #00e5ff;
+    border: none;
+    cursor: pointer;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: #0f172a;
 }
 </style>
@@ -98,62 +150,62 @@ footer {
     <h1>VAJRAITECH LLP</h1>
     <nav>
         <a href="#">Home</a>
-        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Securing Your Digital World</h2>
-    <p>Cybersecurity, Network Security & IT Support Services tailored for modern businesses.</p>
-    <button class="btn">Get Started</button>
-</section>
+    <h2 class="glow">Securing Your Digital World</h2>
+    <p>Cybersecurity, Network Security & IT Support Experts</p>
 
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p>
-        VAJRAITECH LLP is a tech startup based in Navi Mumbai providing advanced cybersecurity,
-        network solutions, and remote IT support services.
-        We specialize in securing and optimizing business infrastructure.
-    </p>
+    <div class="button-group">
+        <button class="btn">Get Started</button>
+        <button class="btn">Contact Us</button>
+    </div>
 </section>
 
 <section id="services" class="section">
-    <h2>Our Services</h2>
+    <h2 class="glow">Our Services</h2>
 
     <div class="services">
         <div class="card">
             <h3>Cybersecurity</h3>
-            <p>Threat detection, audits, and data protection.</p>
+            <p>Threat detection & protection</p>
         </div>
 
         <div class="card">
             <h3>Network Security</h3>
-            <p>Firewall setup, VPN, and monitoring solutions.</p>
+            <p>Firewall & VPN solutions</p>
         </div>
 
         <div class="card">
             <h3>IT Support</h3>
-            <p>Remote troubleshooting and system management.</p>
-        </div>
-
-        <div class="card">
-            <h3>Customer Support</h3>
-            <p>End-user support and helpdesk solutions.</p>
+            <p>Remote troubleshooting</p>
         </div>
     </div>
 </section>
 
-<section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <p>📍 Navi Mumbai, India</p>
-    <p>📧 info@vajraitech.com</p>
-    <p>📞 +91-XXXXXXXXXX</p>
+<section id="contact" class="section">
+    <h2 class="glow">Contact Us</h2>
+
+    <!-- FORM -->
+    <form action="https://formsubmit.co/nishantveer9066@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Requirement" required></textarea>
+
+        <button class="submit-btn">Send Enquiry</button>
+    </form>
+
+    <p>📞 +91 9767337880</p>
 </section>
 
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/919767337880" target="_blank">💬</a>
+
 <footer>
-    <p>© 2026 VAJRAITECH LLP. All rights reserved.</p>
+    <p>© 2026 VAJRAITECH LLP</p>
 </footer>
 
 </body>
