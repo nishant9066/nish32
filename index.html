@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 14px 25px;
+    padding: 14px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,38 +36,19 @@ header {
     color: #00e5ff;
 }
 
-/* HAMBURGER */
-.menu-btn {
-    font-size: 22px;
-    cursor: pointer;
+nav {
+    display: flex;
+    gap: 25px;
 }
 
-/* SIDE MENU */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background: #050914;
-    padding: 60px 20px;
-    transition: 0.3s;
-}
-
-.side-menu a {
-    display: block;
-    margin: 20px 0;
+nav a {
     text-decoration: none;
-    color: #ccc;
-    font-size: 16px;
+    color: #cbd5e1;
+    font-size: 14px;
 }
 
-.side-menu a:hover {
+nav a:hover {
     color: #00e5ff;
-}
-
-.side-menu.active {
-    right: 0;
 }
 
 /* HERO */
@@ -79,15 +60,22 @@ header {
     align-items: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
     text-align: center;
-    padding: 0 20px;
+    padding: 0 20px 20px;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 38px;
+    max-width: 700px;
+    animation: fadeUp 1s ease;
 }
 
 .highlight {
     color: #00e5ff;
+}
+
+.hero p {
+    margin-top: 8px;
+    color: #aaa;
 }
 
 /* BUTTONS */
@@ -95,12 +83,15 @@ header {
     margin-top: 18px;
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
     padding: 10px 22px;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.15s;
 }
 
 .btn:active {
@@ -111,11 +102,13 @@ header {
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
     color: black;
+    font-weight: 600;
 }
 
 .btn-secondary {
     border: 1px solid #00e5ff;
     color: #00e5ff;
+    background: transparent;
 }
 
 /* SECTION */
@@ -124,10 +117,25 @@ header {
     text-align: center;
 }
 
+/* DIVIDER ANIMATION */
+.divider {
+    height: 1px;
+    width: 0;
+    margin: 30px auto;
+    background: linear-gradient(to right, transparent, #00e5ff, transparent);
+    transition: width 1s ease;
+}
+
 /* MISSION */
 .mission {
     padding: 35px 15px;
     text-align: center;
+}
+
+.mission p {
+    max-width: 620px;
+    margin: 10px auto 0;
+    color: #aaa;
 }
 
 /* SERVICES */
@@ -144,9 +152,15 @@ header {
     padding: 18px;
     width: 240px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* CONTACT BG */
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #00e5ff;
+}
+
+/* CONTACT (DIFFERENT BG) */
 #contact {
     background: #050914;
 }
@@ -164,6 +178,7 @@ input, textarea {
     background: #0b1224;
     border: 1px solid #1e293b;
     color: white;
+    border-radius: 4px;
 }
 
 .submit-btn {
@@ -171,20 +186,33 @@ input, textarea {
     padding: 10px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
+    cursor: pointer;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
 }
 
 /* LOCATION */
 .location {
-    padding: 14px;
+    padding: 14px 10px;
     text-align: center;
+    border-top: 1px solid rgba(0,229,255,0.08);
 }
 
-/* FOOTER */
+.location p {
+    margin: 2px 0;
+    color: #bbb;
+}
+
+/* FOOTER (DIFFERENT BG) */
 footer {
     background: #02040a;
     padding: 8px;
     text-align: center;
     font-size: 11px;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* WHATSAPP */
@@ -196,6 +224,19 @@ footer {
     padding: 10px;
     border-radius: 50%;
 }
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 30px; }
+    nav { gap: 12px; }
+    nav a { font-size: 12px; }
+}
 </style>
 </head>
 
@@ -203,18 +244,16 @@ footer {
 
 <header>
     <div class="logo">VAJRAITECH LLP</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
-
-<!-- SIDE MENU -->
-<div class="side-menu" id="menu">
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</div>
 
 <section class="hero">
     <h1>Building a <span class="highlight">Secure Digital Future</span></h1>
+    <p>Cybersecurity, Network Security & Reliable IT Support</p>
 
     <div class="cta">
         <button class="btn btn-primary">Get Protected</button>
@@ -222,20 +261,29 @@ footer {
     </div>
 </section>
 
+<div class="divider"></div>
+
 <section class="mission">
     <h2>Our Mission</h2>
-    <p>To empower businesses with cybersecurity and reliable IT solutions.</p>
+    <p>
+        To empower businesses with strong cybersecurity, reliable network infrastructure,
+        and seamless IT support—ensuring growth, protection, and a future-ready digital environment.
+    </p>
 </section>
+
+<div class="divider"></div>
 
 <section id="services" class="section">
     <h2>Our Services</h2>
 
     <div class="services">
-        <div class="card"><h3>Cybersecurity</h3></div>
-        <div class="card"><h3>Network Security</h3></div>
-        <div class="card"><h3>IT Support</h3></div>
+        <div class="card"><h3>Cybersecurity</h3><p>Advanced protection</p></div>
+        <div class="card"><h3>Network Security</h3><p>Firewall & VPN</p></div>
+        <div class="card"><h3>IT Support</h3><p>Remote troubleshooting</p></div>
     </div>
 </section>
+
+<div class="divider"></div>
 
 <section id="contact" class="section">
     <h2>Contact</h2>
@@ -244,6 +292,7 @@ footer {
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
         <textarea name="message" placeholder="Requirement"></textarea>
+
         <button class="submit-btn">Request Consultation</button>
     </form>
 
@@ -262,9 +311,16 @@ footer {
 </footer>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
-}
+const dividers = document.querySelectorAll('.divider');
+
+window.addEventListener('scroll', () => {
+    dividers.forEach(div => {
+        const rect = div.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            div.style.width = "80%";
+        }
+    });
+});
 </script>
 
 </body>
