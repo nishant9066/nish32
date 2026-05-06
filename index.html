@@ -16,18 +16,18 @@ body {
     transition: 0.3s;
 }
 
-/* SOFT GREY LIGHT MODE */
+/* LIGHT MODE */
 body.light {
-    background: #e6ebf2; /* soft grey */
+    background: #e6ebf2;
     color: #111;
 }
 
-/* HEADER */
+/* HEADER FIXED (NO OVERLAP EVER) */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 14px 15px;
+    padding: 12px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,8 +37,11 @@ header {
     z-index: 1000;
 }
 
-body.light header {
-    background: rgba(255,255,255,0.6);
+/* WRAPPER FOR SAFE SPACING */
+.header-left {
+    display: flex;
+    align-items: center;
+    min-width: 0; /* IMPORTANT */
 }
 
 /* LOGO */
@@ -46,15 +49,20 @@ body.light header {
     font-size: 20px;
     font-weight: 700;
     color: #00e5ff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* prevents push */
 }
 
-/* ICON TOGGLE */
+/* BUTTON SAFE */
 .toggle-btn {
+    flex-shrink: 0; /* NEVER shrink */
     font-size: 18px;
     background: transparent;
     border: none;
     cursor: pointer;
     color: #fff;
+    margin-left: 10px;
 }
 
 body.light .toggle-btn {
@@ -245,7 +253,9 @@ body.light footer {
 <body>
 
 <header>
-    <div class="logo">VAJRAITECH LLP</div>
+    <div class="header-left">
+        <div class="logo">VAJRAITECH LLP</div>
+    </div>
     <button class="toggle-btn" onclick="toggleMode()" id="toggleIcon">🌙</button>
 </header>
 
