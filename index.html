@@ -18,26 +18,28 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 12px 50px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
     background: rgba(10, 15, 30, 0.6);
-    border-bottom: 1px solid rgba(0,229,255,0.1);
+    border-bottom: 1px solid rgba(0,229,255,0.08);
     z-index: 1000;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     color: #00e5ff;
 }
 
 nav a {
-    margin-left: 25px;
-    color: #ccc;
+    margin-left: 20px;
+    color: #bbb;
     text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -51,14 +53,15 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
+    text-align: center;
     padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    max-width: 800px;
+    font-size: 42px;
+    max-width: 750px;
+    animation: fadeUp 1s ease;
 }
 
 .highlight {
@@ -67,36 +70,45 @@ nav a:hover {
 
 .hero p {
     color: #aaa;
-    max-width: 600px;
+    max-width: 550px;
+    margin-top: 10px;
+    animation: fadeUp 1.3s ease;
 }
 
 /* BUTTONS */
 .cta {
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    animation: fadeUp 1.6s ease;
 }
 
 .btn-primary {
-    padding: 12px 28px;
+    padding: 10px 24px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
     color: black;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-secondary {
-    padding: 12px 28px;
+    padding: 10px 24px;
     border: 1px solid #00e5ff;
     color: #00e5ff;
     background: transparent;
-    border-radius: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 15px #00e5ff;
 }
 
 /* SECTION */
 .section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -108,67 +120,86 @@ nav a:hover {
 }
 
 .card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(0,229,255,0.1);
-    margin: 15px;
-    padding: 25px;
-    width: 260px;
-    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(0,229,255,0.08);
+    margin: 10px;
+    padding: 20px;
+    width: 240px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
 }
 
 /* FORM */
 form {
-    max-width: 420px;
+    max-width: 380px;
     margin: auto;
 }
 
 input, textarea {
     width: 100%;
-    margin: 10px 0;
-    padding: 12px;
+    margin: 8px 0;
+    padding: 10px;
     background: #0b1224;
     border: 1px solid #1e293b;
     color: white;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .submit-btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: linear-gradient(45deg, #00e5ff, #0077ff);
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* LOCATION SECTION */
+/* LOCATION */
 .location {
-    background: #050814;
-    padding: 50px 20px;
+    padding: 30px 20px;
     text-align: center;
-    border-top: 1px solid rgba(0,229,255,0.1);
+    border-top: 1px solid rgba(0,229,255,0.08);
 }
 
-.location h3 {
-    color: #00e5ff;
-    margin-bottom: 10px;
+.location p {
+    margin: 4px 0;
+    color: #bbb;
+}
+
+/* FOOTER (CLEAN & SMALL) */
+footer {
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* WHATSAPP */
 .whatsapp {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 18px;
+    right: 18px;
     background: #25D366;
-    padding: 14px;
+    padding: 12px;
     border-radius: 50%;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #050814;
-    color: #888;
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -185,14 +216,8 @@ footer {
 </header>
 
 <section class="hero">
-    <h1>
-        Building a <span class="highlight">Secure Digital Future</span>
-    </h1>
-
-    <p>
-        Protecting businesses with advanced cybersecurity, network solutions,
-        and reliable IT support.
-    </p>
+    <h1>Building a <span class="highlight">Secure Digital Future</span></h1>
+    <p>Cybersecurity, Network Security & Reliable IT Support for modern businesses.</p>
 
     <div class="cta">
         <button class="btn-primary">Get Protected</button>
@@ -206,7 +231,7 @@ footer {
     <div class="services">
         <div class="card">
             <h3>Cybersecurity</h3>
-            <p>Protection from cyber threats</p>
+            <p>Advanced threat protection</p>
         </div>
 
         <div class="card">
@@ -216,18 +241,18 @@ footer {
 
         <div class="card">
             <h3>IT Support</h3>
-            <p>Remote troubleshooting</p>
+            <p>Fast remote troubleshooting</p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
 
     <form action="https://formsubmit.co/nishantveer9066@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <textarea name="message" placeholder="Your Requirement"></textarea>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Requirement"></textarea>
 
         <button class="submit-btn">Request Consultation</button>
     </form>
@@ -235,17 +260,15 @@ footer {
     <p>📞 +91 9767337880</p>
 </section>
 
-<!-- LOCATION -->
 <section class="location">
-    <h3>Our Office</h3>
     <p>📍 Navi Mumbai, Maharashtra</p>
-    <p>🌐 Currently Operating Remotely Across India</p>
+    <p>🌐 Remote Services Available</p>
 </section>
 
 <a class="whatsapp" href="https://wa.me/919767337880">💬</a>
 
 <footer>
-    © 2026 VAJRAITECH LLP | Cybersecurity & IT Solutions
+    © 2026 VAJRAITECH LLP
 </footer>
 
 </body>
