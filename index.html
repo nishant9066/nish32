@@ -16,34 +16,22 @@ body {
     transition: 0.3s;
 }
 
-/* FORCE REMOVE NAV (FINAL FIX) */
-nav {
-    display: none !important;
-}
-
 /* LIGHT MODE */
 body.light {
     background: #e6ebf2;
     color: #111;
 }
 
-/* HEADER */
+/* HEADER (NOT STICKY NOW) */
 header {
-    position: fixed;
-    top: 0;
+    position: relative; /* FIXED */
     width: 100%;
     padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(8,12,24,0.9);
-    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    z-index: 1000;
-}
-
-body.light header {
-    background: rgba(255,255,255,0.6);
 }
 
 /* LOGO */
@@ -51,7 +39,6 @@ body.light header {
     font-size: 20px;
     font-weight: 700;
     color: #00e5ff;
-    white-space: nowrap;
 }
 
 /* TOGGLE */
@@ -70,13 +57,14 @@ body.light .toggle-btn {
 /* HERO */
 .hero {
     min-height: 100vh;
-    padding-top: 110px;
+    padding-top: 40px; /* FIXED GAP */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background: radial-gradient(circle at top, #0a0f25, #000);
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 body.light .hero {
